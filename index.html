@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="content">
+        <section class="distort">
+            <div>
+                <img src="https://images.pexels.com/photos/25243802/pexels-photo-25243802/free-photo-of-mare-spiaggia-vacanza-persone.jpeg" alt="">
+                <h1>Title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptas nisi enim! Optio explicabo obcaecati porro dignissimos quis voluptatibus praesentium, ducimus error unde adipisci ipsa quo delectus, nihil molestiae sed!</p>
+            </div>
+
+            <div>
+                <img src="https://images.pexels.com/photos/25243802/pexels-photo-25243802/free-photo-of-mare-spiaggia-vacanza-persone.jpeg" alt="">
+                <h1>Title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptas nisi enim! Optio explicabo obcaecati porro dignissimos quis voluptatibus praesentium, ducimus error unde adipisci ipsa quo delectus, nihil molestiae sed!</p>
+            </div>
+
+            <div>
+                <img src="https://images.pexels.com/photos/25243802/pexels-photo-25243802/free-photo-of-mare-spiaggia-vacanza-persone.jpeg" alt="">
+                <h1>Title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptas nisi enim! Optio explicabo obcaecati porro dignissimos quis voluptatibus praesentium, ducimus error unde adipisci ipsa quo delectus, nihil molestiae sed!</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const content = document.querySelector("section");
+        let currentPos = window.pageYOffset;
+
+        const callDistort = function(){
+            const newPos = window.pageYOffset;
+            const diff = newPos - currentPos;
+            const speed = diff * 0.40;
+
+            content.style.transform = "SkewY(" + speed + "deg)";
+            currentPos = newPos;
+            requestAnimationFrame(callDistort);
+        };
+
+        callDistort();
+
+    </script>
+
+</body>
+</html>
